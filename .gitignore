@@ -26,3 +26,5 @@
 .local/share/nvim/swap/*
 .zshrc
 NoMachine/
+temp/
+.config/nvim/plugged/*
