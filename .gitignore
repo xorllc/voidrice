@@ -11,5 +11,8 @@
 .local/share/nvim/
 .local/share/weatherreport
 .local/share/xorg/
+.local/src/
 .nx/
 .qt/
+.config/BraveSoftware/
+.pki/
