@@ -16,3 +16,9 @@
 .qt/
 .config/BraveSoftware/
 .pki/
+.config/libfm/
+.config/ncmpcpp/error.log
+.config/pcmanfm/
+.local/share/lf/
+.local/share/ranger/
+.local/share/zathura/
