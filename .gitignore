@@ -23,3 +23,8 @@
 .local/share/ranger/
 .local/share/zathura/
 .python_history
+.config/dunst/dunstrc
+.config/zathura/zathurarc
+.local/bin/setbg
+.config/nnn/
+.local/share/calcurse/
