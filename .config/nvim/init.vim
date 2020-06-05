@@ -27,6 +27,10 @@ set mouse=a
 set nohlsearch
 set clipboard+=unnamedplus
 
+set cursorline
+hi! CursorLine cterm=NONE ctermbg=235 guibg=#1e2132
+hi! Visual ctermbg=236 guibg=#272c42
+
 " Some basics:
 	nnoremap c "_c
 	set nocompatible
