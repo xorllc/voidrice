@@ -22,3 +22,10 @@
 .config/vifm/vifmshortcuts
 .config/zsh/.zcompdump
 .config/zshnameddirrc
+.viminfo
+.config/htop/
+archive/
+.config/dconf/
+.config/ncmpcpp/error.log
+.local/share/recently-used.xbel
+code-archive/
