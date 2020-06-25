@@ -2,7 +2,7 @@
 *.alpha: 0.9
 
 !! Set a default font and font size as below:
-*.font: monospace:size=18
+*.font: monospace:size=14
 
 /* name		dark	light */
 /* black	0	8 */
