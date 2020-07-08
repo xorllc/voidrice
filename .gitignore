@@ -29,3 +29,7 @@ archive/
 .config/ncmpcpp/error.log
 .local/share/recently-used.xbel
 code-archive/
+.local/share/sm64pc/
+.ssh/
+.fceux/
+.config/gtk-2.0/gtkfilechooser.ini
