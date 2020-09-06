@@ -46,6 +46,7 @@ set cursorline
 	filetype plugin on
 	syntax on
 	set encoding=utf-8
+	set fileencodings=ucs-bom,utf-8,sjis,default
 	set number relativenumber
 " Enable autocompletion:
 	set wildmode=longest,list,full
