@@ -17,6 +17,7 @@ Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
+Plug 'cocopon/iceberg.vim'
 call plug#end()
 
 set title
@@ -30,12 +31,25 @@ set noruler
 set laststatus=0
 set noshowcmd
 
+set cursorline
+"hi! CursorLine cterm=NONE ctermbg=235 guibg=#1e2132
+"hi! Visual ctermbg=236 guibg=#272c42
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" COLOR
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+:color iceberg
+" True color mode! (Requires a fancy modern terminal, but iTerm works.)
+:set termguicolors
+:set background=dark
+
 " Some basics:
 	nnoremap c "_c
 	set nocompatible
 	filetype plugin on
 	syntax on
 	set encoding=utf-8
+	set fileencodings=ucs-bom,utf-8,sjis,default
 	set number relativenumber
 " Enable autocompletion:
 	set wildmode=longest,list,full
