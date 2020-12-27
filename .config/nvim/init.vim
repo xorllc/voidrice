@@ -17,6 +17,8 @@ Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
+Plug 'cocopon/iceberg.vim'
+Plug 'dylanaraps/wal.vim'
 call plug#end()
 
 set title
@@ -30,12 +32,31 @@ set noruler
 set laststatus=0
 set noshowcmd
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" COLOR
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+colorscheme wal
+" True color mode! (Requires a fancy modern terminal, but iTerm works.)
+"set termguicolors
+"set background=dark
+
+"
+" Override wal's settings internally.
+"
+augroup vimrc
+  autocmd!
+  autocmd ColorScheme * hi CursorLine       guifg=NONE        guibg=#121212     gui=NONE      ctermfg=NONE       ctermbg=235    cterm=NONE
+augroup END
+set cursorline
+
 " Some basics:
 	nnoremap c "_c
 	set nocompatible
 	filetype plugin on
 	syntax on
 	set encoding=utf-8
+	set fileencodings=ucs-bom,utf-8,sjis,default
 	set number relativenumber
 " Enable autocompletion:
 	set wildmode=longest,list,full
