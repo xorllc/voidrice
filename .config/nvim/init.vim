@@ -17,8 +17,9 @@ Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
-Plug 'cocopon/iceberg.vim'
+"Plug 'cocopon/iceberg.vim'
 Plug 'dylanaraps/wal.vim'
+Plug 'quanganhdo/grb256'
 call plug#end()
 
 set title
@@ -36,18 +37,18 @@ set noshowcmd
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme wal
+colorscheme grb256
 " True color mode! (Requires a fancy modern terminal, but iTerm works.)
-"set termguicolors
-"set background=dark
+set termguicolors
+set background=dark
 
 "
 " Override wal's settings internally.
 "
-augroup vimrc
-  autocmd!
-  autocmd ColorScheme * hi CursorLine       guifg=NONE        guibg=#121212     gui=NONE      ctermfg=NONE       ctermbg=235    cterm=NONE
-augroup END
+"augroup vimrc
+"  autocmd!
+"  autocmd ColorScheme * hi CursorLine       guifg=NONE        guibg=#121212     gui=NONE      ctermfg=NONE       ctermbg=235    cterm=NONE
+"augroup END
 set cursorline
 
 " Some basics:
