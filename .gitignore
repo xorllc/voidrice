@@ -59,3 +59,22 @@ s9copiedfromphone/
 unfreeze/
 more-work/
 wallpapers/
+.config/@trezor/
+.config/Daedalus Mainnet/
+.config/QtProject.conf
+.config/audacious/
+.config/transmission/
+.config/xbuild/
+.daedalus/
+.dbus/
+.fonts/
+.local/bin/daedalus-mainnet
+.local/share/Daedalus/
+.local/share/applications/Daedalus-mainnet.desktop
+.local/share/applications/mimeinfo.cache
+.local/share/go/
+.local/share/icons/
+.local/share/mime/
+.nix-defexpr/
+.recently-used
+mesen.desktop
