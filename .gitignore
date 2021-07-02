@@ -78,3 +78,10 @@ wallpapers/
 .nix-defexpr/
 .recently-used
 mesen.desktop
+.config/GIMP/
+.config/bsnes-hd beta/
+.config/hiro/
+.config/lf/shortcutrc
+.config/snes9x/
+.local/share/crypto-prices/
+.snes9x/
