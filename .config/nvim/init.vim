@@ -18,8 +18,9 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
 "Plug 'cocopon/iceberg.vim'
-Plug 'dylanaraps/wal.vim'
-Plug 'quanganhdo/grb256'
+"Plug 'dylanaraps/wal.vim'
+"Plug 'quanganhdo/grb256'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 set title
@@ -37,7 +38,7 @@ set noshowcmd
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme grb256
+colorscheme nord
 " True color mode! (Requires a fancy modern terminal, but iTerm works.)
 set termguicolors
 set background=dark
