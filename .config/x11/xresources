@@ -198,42 +198,59 @@
 /* *.color7:       #b4b8bf */
 /* *.color15:      #c7ccd4 */
 
-#define nord0 #2E3440
-#define nord1 #3B4252
-#define nord2 #434C5E
-#define nord3 #4C566A
-#define nord4 #D8DEE9
-#define nord5 #E5E9F0
-#define nord6 #ECEFF4
-#define nord7 #8FBCBB
-#define nord8 #88C0D0
-#define nord9 #81A1C1
-#define nord10 #5E81AC
-#define nord11 #BF616A
-#define nord12 #D08770
-#define nord13 #EBCB8B
-#define nord14 #A3BE8C
-#define nord15 #B48EAD
+/* #define nord0 #0F1115 */
+/* #define nord1 #272C36 */
+/* #define nord2 #262C36 */
+/* #define nord3 #2F3542 */
+/* #define nord4 #BFC4CC */
+/* #define nord5 #D2D4D8 */
+/* #define nord6 #D7D9DB */
+/* #define nord7 #4D6565 */
+/* #define nord8 #4D6D76 */
+/* #define nord9 #495b6d */
+/* #define nord10 #5E81AC */
+/* #define nord11 #BF616A */
+/* #define nord12 #D08770 */
+/* #define nord13 #EBCB8B */
+/* #define nord14 #A3BE8C */
+/* #define nord15 #B48EAD */
 
-*.foreground:   nord4
-*.background:   nord0
-*.cursorColor:  nord4
-*fading: 35
-*fadeColor: nord3
+/* /1* #define nord0 #1C2027 *1/ */
+/* /1* #define nord1 #272C36 *1/ */
+/* /1* #define nord2 #262C36 *1/ */
+/* /1* #define nord3 #2F3542 *1/ */
+/* /1* #define nord4 #D8DEE9 *1/ */
+/* /1* #define nord5 #E5E9F0 *1/ */
+/* /1* #define nord6 #ECEFF4 *1/ */
+/* /1* #define nord7 #4D6565 *1/ */
+/* /1* #define nord8 #4D6D76 *1/ */
+/* /1* #define nord9 #495b6d *1/ */
+/* /1* #define nord10 #5E81AC *1/ */
+/* /1* #define nord11 #BF616A *1/ */
+/* /1* #define nord12 #D08770 *1/ */
+/* /1* #define nord13 #EBCB8B *1/ */
+/* /1* #define nord14 #A3BE8C *1/ */
+/* /1* #define nord15 #B48EAD *1/ */
 
-*.color0: nord1
-*.color1: nord11
-*.color2: nord14
-*.color3: nord13
-*.color4: nord9
-*.color5: nord15
-*.color6: nord8
-*.color7: nord5
-*.color8: nord3
-*.color9: nord11
-*.color10: nord14
-*.color11: nord13
-*.color12: nord9
-*.color13: nord15
-*.color14: nord7
-*.color15: nord6
+/* *.foreground:   nord4 */
+/* *.background:   nord0 */
+/* *.cursorColor:  nord4 */
+/* *fading: 35 */
+/* *fadeColor: nord3 */
+
+/* *.color0: nord1 */
+/* *.color1: nord11 */
+/* *.color2: nord14 */
+/* *.color3: nord13 */
+/* *.color4: nord9 */
+/* *.color5: nord15 */
+/* *.color6: nord8 */
+/* *.color7: nord5 */
+/* *.color8: nord3 */
+/* *.color9: nord11 */
+/* *.color10: nord14 */
+/* *.color11: nord13 */
+/* *.color12: nord9 */
+/* *.color13: nord15 */
+/* *.color14: nord7 */
+/* *.color15: nord6 */
