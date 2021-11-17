@@ -19,27 +19,69 @@ Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
 Plug 'cocopon/iceberg.vim'
 Plug 'dylanaraps/wal.vim'
+Plug 'xorllc/grb256'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
+"------------------------------------------------------------------------------
+" https://vi.stackexchange.com/questions/5622/how-do-i-configure-the-vim-airline-plugin-to-look-like-its-own-project-screensho
+" So one can patch existing fonts.
+"
+" nvim looked strange without this set.
+"------------------------------------------------------------------------------
+let g:airline_powerline_fonts = 1
+
+"------------------------------------------------------------------------------
+" Make searches case-sensitive only if they contain upper-case characters.
+"------------------------------------------------------------------------------
+set ignorecase smartcase
+
+"------------------------------------------------------------------------------
+" Tab and search configuration.
+"------------------------------------------------------------------------------
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set autoindent
+set laststatus=2
+set showmatch
+set incsearch
+set hlsearch
+
+"------------------------------------------------------------------------------
+" If a file is changed outside of vim, automatically reload it without asking.
+"------------------------------------------------------------------------------
+set autoread
+
+"------------------------------------------------------------------------------
+" Prevent Vim from clobbering the scrollback buffer. See:
+" http://www.shallowsky.com/linux/noaltscreen.html
+"------------------------------------------------------------------------------
+set t_ti= t_te=
+
 set title
-set bg=light
 set go=a
 set mouse=a
 set nohlsearch
 set clipboard+=unnamedplus
-set noshowmode
-set noruler
-set laststatus=0
-set noshowcmd
 
+"------------------------------------------------------------------------------
+" Removes the -INSERT- at the very bottom if in insert mode; it's redundant to
+" have show mode. Also -REPLACE- as well.
+"------------------------------------------------------------------------------
+set noshowmode
+
+set noruler
+set noshowcmd
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme wal
+colorscheme grb256
 " True color mode! (Requires a fancy modern terminal, but iTerm works.)
-"set termguicolors
-"set background=dark
+set termguicolors
+set background=dark
 
 "
 " Override wal's settings internally.
