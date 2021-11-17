@@ -1,0 +1,12 @@
+hash -d cac=/home/onyx-dragoon/.cache 
+hash -d cf=/home/onyx-dragoon/.config 
+hash -d D=/home/onyx-dragoon/Downloads 
+hash -d d=/home/onyx-dragoon/Documents 
+hash -d dt=/home/onyx-dragoon/.local/share 
+hash -d h=/home/onyx-dragoon 
+hash -d m=/home/onyx-dragoon/Music 
+hash -d mn=/mnt 
+hash -d pp=/home/onyx-dragoon/Pictures 
+hash -d sc=/home/onyx-dragoon/.local/bin 
+hash -d src=/home/onyx-dragoon/.local/src 
+hash -d vv=/home/onyx-dragoon/Videos 
