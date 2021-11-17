@@ -7,8 +7,8 @@ if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autolo
 	autocmd VimEnter * PlugInstall
 endif
 
-map ,, :keepp /<++><CR>ca<
-imap ,, <esc>:keepp /<++><CR>ca<
+"map ,, :keepp /<++><CR>ca<
+"imap ,, <esc>:keepp /<++><CR>ca<
 
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
 Plug 'tpope/vim-surround'
@@ -16,33 +16,66 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/goyo.vim'
 Plug 'jreybert/vimagit'
 Plug 'vimwiki/vimwiki'
-Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
-Plug 'cocopon/iceberg.vim'
-Plug 'dylanaraps/wal.vim'
+"Plug 'cocopon/iceberg.vim'
+"Plug 'dylanaraps/wal.vim'
+Plug 'xorllc/grb256'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
+"------------------------------------------------------------------------------
+" Make searches case-sensitive only if they contain upper-case characters.
+"------------------------------------------------------------------------------
+set ignorecase smartcase
+
+"------------------------------------------------------------------------------
+" Tab and search configuration.
+"------------------------------------------------------------------------------
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set autoindent
+set laststatus=2
+set showmatch
+set incsearch
+set hlsearch
+
+"------------------------------------------------------------------------------
+" If a file is changed outside of vim, automatically reload it without asking.
+"------------------------------------------------------------------------------
+set autoread
+
+"------------------------------------------------------------------------------
+" Prevent Vim from clobbering the scrollback buffer. See:
+" http://www.shallowsky.com/linux/noaltscreen.html
+"------------------------------------------------------------------------------
+set t_ti= t_te=
+"let g:airline_theme='base16_espresso'
+
 set title
-set bg=light
 set go=a
 set mouse=a
 set nohlsearch
 set clipboard+=unnamedplus
-set noshowmode
-set noruler
-set laststatus=0
-set noshowcmd
-colorscheme vim
 
+"------------------------------------------------------------------------------
+" Removes the -INSERT- at the very bottom if in insert mode; it's redundant to
+" have show mode. Also -REPLACE- as well.
+"------------------------------------------------------------------------------
+set noshowmode
+
+set noruler
+set noshowcmd
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme wal
+colorscheme grb256
 " True color mode! (Requires a fancy modern terminal, but iTerm works.)
-"set termguicolors
-"set background=dark
+set termguicolors
+set background=dark
 
 "
 " Override wal's settings internally.
@@ -55,11 +88,12 @@ set cursorline
 
 " Some basics:
 	nnoremap c "_c
+	set nocompatible
 	filetype plugin on
 	syntax on
 	set encoding=utf-8
 	set fileencodings=ucs-bom,utf-8,sjis,default
-	set number relativenumber
+	set number
 " Enable autocompletion:
 	set wildmode=longest,list,full
 " Disables automatic commenting on newline:
@@ -76,11 +110,23 @@ set cursorline
 " Nerd tree
 	map <leader>n :NERDTreeToggle<CR>
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-	let NERDTreeBookmarksFile = stdpath('data') . '/NERDTreeBookmarks'
+    if has('nvim')
+        let NERDTreeBookmarksFile = stdpath('data') . '/NERDTreeBookmarks'
+    else
+        let NERDTreeBookmarksFile = '~/.vim' . '/NERDTreeBookmarks'
+    endif
+
+" vimling:
+	nm <leader>d :call ToggleDeadKeys()<CR>
+	imap <leader>d <esc>:call ToggleDeadKeys()<CR>a
+	nm <leader>i :call ToggleIPA()<CR>
+	imap <leader>i <esc>:call ToggleIPA()<CR>a
+	nm <leader>q :call ToggleProse()<CR>
+  imap <C-c> <Esc>
 
 " vim-airline
 	if !exists('g:airline_symbols')
-		let g:airline_symbols = {}
+  	    let g:airline_symbols = {}
 	endif
 	let g:airline_symbols.colnr = ' C:'
 	let g:airline_symbols.linenr = ' L:'
@@ -126,9 +172,10 @@ set cursorline
 	cabbrev w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 " Enable Goyo by default for mutt writing
-	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo 80 | call feedkeys("jk")
-	autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo!\|x!<CR>
-	autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo!\|q!<CR>
+	autocmd BufRead,BufNewFile /tmp/neomutt* let g:goyo_width=80
+	autocmd BufRead,BufNewFile /tmp/neomutt* :Goyo | set bg=light
+	autocmd BufRead,BufNewFile /tmp/neomutt* map ZZ :Goyo\|x!<CR>
+	autocmd BufRead,BufNewFile /tmp/neomutt* map ZQ :Goyo\|q!<CR>
 
 " Automatically deletes all trailing whitespace and newlines at end of file on save. & reset cursor position
  	autocmd BufWritePre * let currPos = getpos(".")
@@ -173,4 +220,4 @@ nnoremap <leader>h :call ToggleHiddenAll()<CR>
 " Here leader is ";".
 " So ":vs ;cfz" will expand into ":vs /home/<user>/.config/zsh/.zshrc"
 " if typed fast without the timeout.
-silent! source ~/.config/nvim/shortcuts.vim
+" silent! source ~/.config/nvim/shortcuts.vim
