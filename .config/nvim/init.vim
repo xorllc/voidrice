@@ -16,112 +16,13 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/goyo.vim'
 Plug 'jreybert/vimagit'
 Plug 'vimwiki/vimwiki'
-"Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'ap/vim-css-color'
-Plug 'cocopon/iceberg.vim'
-Plug 'dylanaraps/wal.vim'
+"Plug 'cocopon/iceberg.vim'
+"Plug 'dylanaraps/wal.vim'
 Plug 'xorllc/grb256'
-"Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 call plug#end()
-
-"------------------------------------------------------------------------------
-" https://vi.stackexchange.com/questions/5622/how-do-i-configure-the-vim-airline-plugin-to-look-like-its-own-project-screensho
-" So one can patch existing fonts.
-"
-" nvim looked strange without this set.
-"------------------------------------------------------------------------------
-"let g:airline_powerline_fonts = 1
-
-let g:currentmode={
-       \ 'n'  : 'N',
-       \ 'v'  : 'V',
-       \ 'V'  : 'VL',
-       \ "\<C-V>" : 'VB',
-       \ 'i'  : 'I',
-       \ 'R'  : 'R',
-       \ 'Rv' : 'VR',
-       \ 'c'  : 'C',
-       \}
-"let g:currentmode={
-"       \ 'n'  : 'NORMAL ',
-"       \ 'v'  : 'VISUAL ',
-"       \ 'V'  : 'V·Line ',
-"       \ "\<C-V>" : 'V·Block ',
-"       \ 'i'  : 'INSERT ',
-"       \ 'R'  : 'R ',
-"       \ 'Rv' : 'V·Replace ',
-"       \ 'c'  : 'Command ',
-"       \}
-
-"set statusline=
-"set statusline+=\ %{toupper(g:currentmode[mode()])}
-
-set statusline=
-set statusline+=%#Cursor#               " colour
-set statusline+=\ %{toupper(g:currentmode[mode()])}
-set statusline+=\ %#Visual#       " colour
-set statusline+=\ %n\           " buffer number
-set statusline+=%#Visual#       " colour
-set statusline+=%{&paste?'\ PASTE\ ':''}
-set statusline+=%{&spell?'\ SPELL\ ':''}
-set statusline+=%#Cursor#     " colour
-"set statusline+=%#CursorIM#     " colour
-set statusline+=%R                        " readonly flag
-set statusline+=%M                      " modified [+] flag
-set statusline+=%#Cursor#               " colour
-set statusline+=%#CursorLine#     " colour
-set statusline+=\ %t\                   " short file name
-set statusline+=%=                          " right align
-set statusline+=%#CursorLine#   " colour
-set statusline+=\ %Y\                   " file type
-set statusline+=%#Visual#     " colour
-set statusline+=\%3l:%-2c\         " line + column
-set statusline+=%#Cursor#       " colour
-set statusline+=\ %3p%%\                " percentage
-
-"set statusline=
-"set statusline+=%#PmenuSel#
-"set statusline+=%{StatuslineGit()}
-"set statusline+=%#LineNr#
-"set statusline+=\ %f
-"set statusline+=%m\
-"set statusline+=%=
-"set statusline+=%#CursorColumn#
-"set statusline+=\ %y
-"set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-"set statusline+=\[%{&fileformat}\]
-"set statusline+=\ %p%%
-"set statusline+=\ %l:%c
-"set statusline+=\
-
-"set statusline=
-"set statusline+=%#DiffAdd#%{(mode()=='n')?'\ \ NORMAL\ ':''}
-"set statusline+=%#DiffChange#%{(mode()=='i')?'\ \ INSERT\ ':''}
-"set statusline+=%#DiffDelete#%{(mode()=='r')?'\ \ RPLACE\ ':''}
-"set statusline+=%#Cursor#%{(mode()=='v')?'\ \ VISUAL\ ':''}
-"set statusline+=%#Cursor#%{(mode()=='V')?'\ \ VLINE\ ':''}
-"set statusline+=%#Cursor#%{(mode()=='CTRL-V')?'\ \ VBLOCK\ ':''}
-"set statusline+=\ %{toupper(g:currentmode[mode()])}
-"set statusline=
-"set statusline+=\ %{toupper(g:currentmode[mode()])}
-"set statusline+=\ %n\           " buffer number
-"set statusline+=%#Visual#       " colour
-"set statusline+=%{&paste?'\ PASTE\ ':''}
-"set statusline+=%{&spell?'\ SPELL\ ':''}
-"set statusline+=%#CursorIM#     " colour
-"set statusline+=%R                        " readonly flag
-"set statusline+=%M                        " modified [+] flag
-"set statusline+=%#Cursor#               " colour
-"set statusline+=%#CursorLine#     " colour
-"set statusline+=\ %t\                   " short file name
-"set statusline+=%=                          " right align
-"set statusline+=%#CursorLine#   " colour
-"set statusline+=\ %Y\                   " file type
-"set statusline+=%#CursorIM#     " colour
-"set statusline+=\ %3l:%-2c\         " line + column
-"set statusline+=%#Cursor#       " colour
-"set statusline+=\ %3p%%\                " percentage
 
 "------------------------------------------------------------------------------
 " Make searches case-sensitive only if they contain upper-case characters.
