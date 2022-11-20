@@ -93,7 +93,7 @@ set cursorline
 	syntax on
 	set encoding=utf-8
 	set fileencodings=ucs-bom,utf-8,sjis,default
-	set number relativenumber
+	set number
 " Enable autocompletion:
 	set wildmode=longest,list,full
 " Disables automatic commenting on newline:
