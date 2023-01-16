@@ -13,9 +13,10 @@ case $BLOCK_BUTTON in
 	6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
-[ $(pamixer --get-mute) = true ] && echo 🔇 && exit
+vol="$(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
 
-vol="$(pamixer --get-volume)"
+# If muted, print 🔇 and exit.
+[ "$vol" != "${vol%\[MUTED\]}" ] && echo 🔇 && exit
 
 vol="${vol#Volume: }"
 
