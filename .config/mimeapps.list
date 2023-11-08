@@ -1,8 +1,4 @@
 [Default Applications]
-
-# xdg-open will use these settings to determine how to open filetypes.
-# These .desktop entries can also be seen and changed in ~/.local/share/applications/
-
 text/x-shellscript=text.desktop;
 x-scheme-handler/magnet=torrent.desktop;
 application/x-bittorrent=torrent.desktop;
@@ -18,3 +14,8 @@ video/x-matroska=video.desktop
 video/mp4=video.desktop
 x-scheme-handler/lbry=lbry.desktop
 inode/directory=file.desktop
+
+[Added Associations]
+image/jpeg=userapp-sxiv -a-M7OI81.desktop;sxiv.desktop;
+image/gif=userapp-sxiv -a-M7OI81.desktop;
+image/png=sxiv.desktop;
