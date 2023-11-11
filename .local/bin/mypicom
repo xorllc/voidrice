@@ -1,6 +1,6 @@
 #!/bin/bash
 
-picom -b --vsync --no-fading-openclose --fade-in-step=1.0 --fade-out-step=1.0
+#picom -b --vsync --no-fading-openclose --fade-in-step=1.0 --fade-out-step=1.0
 
 #picom -b --unredir-if-possible --backend xr_glx_hybrid --vsync --use-damage --glx-no-stencil
 #picom -b --unredir-if-possible --backend xrender --vsync --use-damage --glx-no-stencil
