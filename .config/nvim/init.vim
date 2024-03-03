@@ -7,8 +7,8 @@ if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autolo
 	autocmd VimEnter * PlugInstall
 endif
 
-map ,, :keepp /<++><CR>ca<
-imap ,, <esc>:keepp /<++><CR>ca<
+"map ,, :keepp /<++><CR>ca<
+"imap ,, <esc>:keepp /<++><CR>ca<
 
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
 Plug 'tpope/vim-surround'
@@ -122,7 +122,7 @@ set cursorline
 	nm <leader>i :call ToggleIPA()<CR>
 	imap <leader>i <esc>:call ToggleIPA()<CR>a
 	nm <leader>q :call ToggleProse()<CR>
-	
+
 " vim-airline
 	if !exists('g:airline_symbols')
   	    let g:airline_symbols = {}
