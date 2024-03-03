@@ -83,4 +83,4 @@ bindkey '^E' end-of-line
 #source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 # source ~/Downloads/git/F-Sy-H/F-Sy-H.plugin.zsh
 # ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
-zle_highlight=(default:bold,fg=white)
+# zle_highlight=(default:bold,fg=white)
