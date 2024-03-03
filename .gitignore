@@ -118,3 +118,4 @@ videos/
 .viminfo
 wallpapers/
 .Xauthority
+.config/chromium
