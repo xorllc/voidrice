@@ -4,3 +4,17 @@
   1. Synaptics tm2964-001                      id=10   [slave  pointer  (2)]
 2. From `xinput list-props 10 | grep -i "Natural Scrolling"`, note the configuration value and the value it's currently set to. 0 means off, 1 means on.
 3. Run `xinput set-prop 10 311 1` where 10 is the device, 311 is the configuration parameter, 1 means "on", that is, enable natural scrolling.
+
+
+TODO
+
+* rempad is broken.
+* nvidia-settings sometimes reverts to a lower refresh rate if pacman Syu updates nvidia.
+* run ntpd -gq after rebooting from windows.
+* reminder to edit .ssh/config when switching to bitizer.
+* hit ctrl-C to switch from edit to normal mode in vim rather than press-release ctrl.
+
+
+# Host github.com
+#   IdentityFile ~/.ssh/bitizer
+#   IdentitiesOnly yes
