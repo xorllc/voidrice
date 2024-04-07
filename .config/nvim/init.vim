@@ -122,6 +122,7 @@ set cursorline
 	nm <leader>i :call ToggleIPA()<CR>
 	imap <leader>i <esc>:call ToggleIPA()<CR>a
 	nm <leader>q :call ToggleProse()<CR>
+  imap <C-c> <Esc>
 
 " vim-airline
 	if !exists('g:airline_symbols')
