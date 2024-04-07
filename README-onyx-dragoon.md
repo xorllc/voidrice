@@ -9,11 +9,9 @@
 
 TODO
 
-* rempad is broken.
 * nvidia-settings sometimes reverts to a lower refresh rate if pacman Syu updates nvidia.
 * run ntpd -gq after rebooting from windows.
 * reminder to edit .ssh/config when switching to bitizer.
-* hit ctrl-C to switch from edit to normal mode in vim rather than press-release ctrl.
 
 
 # Host github.com
