@@ -19,3 +19,6 @@ done >/dev/null 2>&1
 
 # Ensure that xrdb has finished running before moving on to start the WM/DE.
 [ -n "$xrdbpid" ] && wait "$xrdbpid"
+
+# Load nvidia-settings.
+nvidia-settings --load-config-only
