@@ -7,6 +7,11 @@
 3. Run `xinput set-prop 10 311 1` where 10 is the device, 311 is the configuration parameter, 1 means "on", that is, enable natural scrolling.
 
 
+root login shell
+
+usermod --shell /bin/zsh root
+NOTE: PS1 is in .config/zsh/.zshrc
+
 TODO
 
 * nvidia-settings sometimes reverts to a lower refresh rate if pacman Syu updates nvidia.
