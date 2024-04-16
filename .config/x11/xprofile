@@ -11,7 +11,7 @@ xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!	# Uncomment t
 redshift -O 5000  # warm colors for the background.
 
 
-autostart="mpd mypicom dunst unclutter pipewire remaps"
+autostart="mpd mypicom dunst unclutter pipewire remapd"
 
 for program in $autostart; do
 	pidof -sx "$program" || "$program" &
