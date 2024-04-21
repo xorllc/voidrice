@@ -213,3 +213,4 @@ test-mic.wav
 test-react/
 test.py
 .nvidia-settings-rc
+temp/
