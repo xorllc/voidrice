@@ -214,3 +214,5 @@ test-react/
 test.py
 .nvidia-settings-rc
 temp/
+.config/gtk-3.0/bookmarks
+.local/share/Trash/

@@ -93,3 +93,34 @@ ok: run: ntpd: (pid 7499) 12s
 [root@desktop ~]$ date
 Thu Apr 25 01:18:44 AM EDT 2024
 [root@desktop ~]$
+
+
+## How to record audio
+
+```
+rm test-mic.wav
+arecord -d 5 test-mic.wav
+rm test-mic.wav
+arecord -d 5 test-mic.wav
+mpv test-mic.wav
+vim .xprofile
+sudo su -
+nvidia-settings
+sudo nvidia-settings
+sudo nvidia-settings
+arecord -vvv -f dat /dev/null
+arecord -vvv -f dat /dev/null
+arecord -d 5 test-mic.wav
+mpv test-mic.wav
+vim Downloads/snippets
+```
+
+## How to remove Daedalus
+
+```
+chmod -R +w ~/.daedalus
+rm -rf ~/.local/bin/daedalus-mainnet
+rm -f ~/.local/share/applications/Daedalus-mainnet.desktop
+rm -rf ~/.config/Daedalus\ Mainnet
+rm -rf ~/.local/share/Daedalus/mainnet
+```
