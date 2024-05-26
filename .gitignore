@@ -216,3 +216,6 @@ test.py
 temp/
 .config/gtk-3.0/bookmarks
 .local/share/Trash/
+DONTMOVE/
+everdrive/
+wownero/
