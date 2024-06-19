@@ -124,3 +124,184 @@ rm -f ~/.local/share/applications/Daedalus-mainnet.desktop
 rm -rf ~/.config/Daedalus\ Mainnet
 rm -rf ~/.local/share/Daedalus/mainnet
 ```
+
+
+
+## Other Stuff to Install
+[onyx-dragoon@desktop ~]$ xset r rate 300 50
+
+zsh: command not found: xset
+[onyx-dragoon@desktop ~]$ vim README.md
+[onyx-dragoon@desktop ~]$ vim README-onyx-dragoon.md
+[onyx-dragoon@desktop ~]$ pacman -Qs xset
+[onyx-dragoon@desktop ~]$ pacman -Q xset
+error: package 'xset' was not found
+[onyx-dragoon@desktop ~]$ pacman -Ss xset
+world/xorg-xset 1.2.5-1 (xorg-apps xorg)
+    User preference utility for X
+world/xorg-xsetroot 1.1.3-1 (xorg-apps xorg)
+    Classic X utility to set your root window background to a given pattern or color
+world/xsettingsd 1.0.2-1
+    Provides settings to X11 applications via the XSETTINGS specification
+extra/haskell-ixset-typed 0.5.1.0-151
+    Efficient relational queries on Haskell sets
+extra/xorg-xset 1.2.5-1 (xorg-apps xorg)
+    User preference utility for X
+extra/xorg-xsetroot 1.1.3-1 (xorg-apps xorg)
+    Classic X utility to set your root window background to a given pattern or color
+extra/xsettings-client 0.10-9
+    Provides cross toolkit configuration settings such as theme parameters
+extra/xsettingsd 1.0.2-1
+    Provides settings to X11 applications via the XSETTINGS specification
+[onyx-dragoon@desktop ~]$ pacman -S xorg-xset
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (1) xorg-xset-1.2.5-1
+
+Total Download Size:   0.02 MiB
+Total Installed Size:  0.04 MiB
+
+:: Proceed with installation? [Y/n]
+:: Retrieving packages...
+ xorg-xset-1.2.5-1-x86_64                           19.1 KiB  32.3 KiB/s 00:01 [---------------------------------------------] 100%
+(1/1) checking keys in keyring                                                 [---------------------------------------------] 100%
+(1/1) checking package integrity                                               [---------------------------------------------] 100%
+(1/1) loading package files                                                    [---------------------------------------------] 100%
+(1/1) checking for file conflicts                                              [---------------------------------------------] 100%
+(1/1) checking available disk space                                            [---------------------------------------------] 100%
+:: Processing package changes...
+(1/1) installing xorg-xset                                                     [---------------------------------------------] 100%
+[onyx-dragoon@desktop ~]$ xset r rate 300 50
+
+
+
+
+
+
+
+
+
+
+
+
+[onyx-dragoon@desktop ~]$ pacman -Ss tldr
+[sudo] password for onyx-dragoon:
+world/tldr 3.2.0-3
+    Command line client for tldr, a collection of simplified man pages.
+extra/tealdeer 1.6.1-1
+    A fast tldr client in Rust
+extra/tldr 3.2.0-3
+    Command line client for tldr, a collection of simplified man pages.
+
+
+
+
+
+
+
+
+[onyx-dragoon@desktop ~]$ xrandr --output VGA-1 --mode 1920x1200
+
+[onyx-dragoon@desktop ~]$ env | grep -i hist
+HISTFILE=/home/onyx-dragoon/.cache/zsh/history
+SQLITE_HISTORY=/home/onyx-dragoon/.local/share/sqlite_history
+[onyx-dragoon@desktop ~]$ mkdir /home/onyx-dragoon/.cache/zsh
+mkdir: cannot create directory ‘/home/onyx-dragoon/.cache/zsh’: File exists
+[onyx-dragoon@desktop ~]$ env | grep -i hist
+HISTFILE=/home/onyx-dragoon/.cache/zsh/history
+SQLITE_HISTORY=/home/onyx-dragoon/.local/share/sqlite_history
+[onyx-dragoon@desktop ~]$
+
+
+
+
+
+
+
+
+
+
+
+[onyx-dragoon@desktop ~]$ pacman -Ss redshift
+[sudo] password for onyx-dragoon:
+world/redshift 1.12-12
+    Adjusts the color temperature of your screen according to your surroundings.
+extra/redshift 1.12-12
+    Adjusts the color temperature of your screen according to your surroundings.
+[onyx-dragoon@desktop ~]$ pacman -S redshift
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (1) redshift-1.12-12
+
+Total Download Size:   0.14 MiB
+Total Installed Size:  0.86 MiB
+
+:: Proceed with installation? [Y/n]
+:: Retrieving packages...
+ redshift-1.12-12-x86_64                                                            147.6 KiB   199 KiB/s 00:01 [------------------------------------------------------------------] 100%
+(1/1) checking keys in keyring                                                                                  [------------------------------------------------------------------] 100%
+(1/1) checking package integrity                                                                                [------------------------------------------------------------------] 100%
+(1/1) loading package files                                                                                     [------------------------------------------------------------------] 100%
+(1/1) checking for file conflicts                                                                               [------------------------------------------------------------------] 100%
+(1/1) checking available disk space                                                                             [------------------------------------------------------------------] 100%
+:: Processing package changes...
+(1/1) installing redshift                                                                                       [------------------------------------------------------------------] 100%
+Optional dependencies for redshift
+    geoclue: for automatic location based on GeoClue2
+    gtk3: for redshift-gtk [installed]
+    libappindicator-gtk3: for AppIndicator support in redshift-gtk
+    python-gobject: for redshift-gtk [installed]
+    python-xdg: for redshift-gtk
+:: Running post-transaction hooks...
+(1/2) Updating icon theme caches...
+(2/2) Updating the desktop file MIME type cache...
+[onyx-dragoon@desktop ~]$ redshift -O 5000
+Using method `randr'.
+
+
+
+https://wiki.archlinux.org/title/VirtualBox/Install_Arch_Linux_as_a_guest
+
+Install the Guest Additions
+
+VirtualBox Guest Additions provides drivers and applications that optimize the guest operating system including improved image resolution and better control of the mouse. Within the installed guest system, install:
+
+    virtualbox-guest-utils for VirtualBox Guest utilities with X support
+    virtualbox-guest-utils-nox for VirtualBox Guest utilities without X support
+
+
+Launch the VirtualBox guest services
+
+After the rather big installation step dealing with VirtualBox kernel modules, now you need to start the guest services. The guest services are actually just a binary executable called VBoxClient which will interact with your X Window System. VBoxClient manages the following features:
+
+    shared clipboard and drag and drop between the host and the guest;
+    seamless window mode;
+    the guest display is automatically resized according to the size of the guest window;
+    checking the VirtualBox host version
+
+All of these features can be enabled independently with their dedicated flags:
+
+$ VBoxClient --clipboard
+$ VBoxClient --draganddrop
+$ VBoxClient --seamless
+$ VBoxClient --checkhostversion
+$ VBoxClient --vmsvga
+
+
+
+
+
+
+
+
+
+
+
+
+[onyx-dragoon@desktop ~]$ mount -t vboxsf shibbity /home/onyx-dragoon/foobar
+[onyx-dragoon@desktop ~]$ mount -t vboxsf shibbity /home/onyx-dragoon/foobar
+[onyx-dragoon@desktop ~]$ ls foobar
+IISExpress  My Music  My Pictures  My Videos  My Web Sites  Visual Studio 2022  capslock-to-ctrl.reg  desktop.ini
+[onyx-dragoon@desktop ~]$
