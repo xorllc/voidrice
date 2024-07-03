@@ -16,4 +16,7 @@ fi
 
 # Activate dbus variables
 dbus-update-activation-environment --all
+#if [ "$(dmidecode -s system-product-name)" == "VMware Virtual Platform" ]; then
+/usr/bin/vmware-user-suid-wrapper &
+#fi
 dbus-launch ssh-agent dwm
