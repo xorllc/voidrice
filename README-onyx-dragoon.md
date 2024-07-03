@@ -427,3 +427,17 @@ When running inside a VM, also disable the Firefox speech dispatch as
 explained here.
 
 ```
+
+
+# Disable Win+L
+
+Yes, it does interfere with Win+L to resize windows to the left in dwm.
+
+https://superuser.com/questions/1059511/how-to-disable-winl-in-windows-10
+
+```
+    go to HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System, if there is no System, create one
+    create a 32bit DWORD, name it DisableLockWorkstation
+    set the value of DisableLockWorkstation to 1
+    it will take effect immediately
+```
