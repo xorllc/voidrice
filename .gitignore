@@ -222,3 +222,4 @@ wownero/
 .local/share/lesshst
 .vboxclient-clipboard-tty1-control.pid
 .vboxclient-clipboard-tty1-service.pid
+.local/share/lesshst

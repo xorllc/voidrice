@@ -305,3 +305,72 @@ $ VBoxClient --vmsvga
 [onyx-dragoon@desktop ~]$ ls foobar
 IISExpress  My Music  My Pictures  My Videos  My Web Sites  Visual Studio 2022  capslock-to-ctrl.reg  desktop.ini
 [onyx-dragoon@desktop ~]$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# VMWare
+
+```
+[onyx-dragoon@desktop ~]$ pacman -S open-vm-tools gtkmm3
+
+
+
+Note towards the bottom, where VMWare is considered:
+https://wiki.archlinux.org/title/VMware/Install_Arch_Linux_as_a_guest
+https://askubuntu.com/questions/1308341/dwm-window-manager-on-vmware-player-no-copy-paste-between-host-and-guest
+
+
+[onyx-dragoon@desktop ~]$ cat .config/x11/xinitrc
+
+#!/bin/sh
+
+# xinitrc runs automatically when you run startx.
+
+# There are some small but important commands that need to be run when we start
+# the graphical environment. There is a link to this file in ~/.xprofile
+# because that file is run automatically if someone uses a display manager
+# (login screen) and so they are needed there. To prevent doubling up commands,
+# I source them here with the line below.
+
+if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/x11/xprofile" ]; then
+        . "${XDG_CONFIG_HOME:-$HOME/.config}/x11/xprofile"
+else
+        . "$HOME/.xprofile"
+fi
+
+# Activate dbus variables
+dbus-update-activation-environment --all
+/usr/bin/vmware-user-suid-wrapper &
+dbus-launch ssh-agent dwm
+
+```
+
+
+
+
+
+
+
+
+
+# History is broken in ZSH
+
+```
+mkdir .cache/zsh/
+```
