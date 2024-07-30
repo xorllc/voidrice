@@ -223,3 +223,16 @@ wownero/
 .vboxclient-clipboard-tty1-control.pid
 .vboxclient-clipboard-tty1-service.pid
 .local/share/lesshst
+.config/VirtualBox/
+.local/share/Steam/
+.local/share/applications/
+.local/share/fonts/.uuid
+.local/share/vulkan/
+.pulse-cookie
+.steam/
+.steampath
+.steampid
+.vagrant.d/
+VirtualBox VMs/
+VirtualBox on Artix (Arch-based Linux)_ Install - DEV Community.pdf
+steam.desktop
