@@ -441,3 +441,49 @@ https://superuser.com/questions/1059511/how-to-disable-winl-in-windows-10
     set the value of DisableLockWorkstation to 1
     it will take effect immediately
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+smartctl
+
+
+[root@desktop ~]$ smartctl -c -d sat /dev/sdd | grep -i remain
+[root@desktop ~]$ smartctl -a -d sat /dev/sdd
+smartctl 7.4 2023-08-01 r5530 [x86_64-linux-6.10.10-artix1-1] (local build)
+Copyright (C) 2002-23, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Model Family:     Western Digital Gold
+Device Model:     WDC WD4002FYYZ-01B7CB0
+Serial Number:    K3G5B2RB
+LU WWN Device Id: 5 000cca 25cc26f7a
+
+
+...
+
+
+
+SMART Self-test log structure revision number 1
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Extended offline    Completed without error       00%     39612         -
+# 2  Short offline       Completed without error       00%     39603         -
+# 3  Short offline       Completed without error       00%     39602         -
