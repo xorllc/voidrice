@@ -487,3 +487,44 @@ Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA
 # 1  Extended offline    Completed without error       00%     39612         -
 # 2  Short offline       Completed without error       00%     39603         -
 # 3  Short offline       Completed without error       00%     39602         -
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Mesen
+
+[onyx-dragoon@desktop ~]$ yay -S mesen2-git
+
+
+
+
+
+
+
+
+
+# Audio debugging, corsair carbide
+
+First, we need pulseaudio:
+```
+[onyx-dragoon@desktop ~]$ pacman -S pulseaudio-bluetooth
+```
+
+Then, toggle between headset and speakers:
+```
+[onyx-dragoon@desktop ~]$ pacmd list-sinks
+pacmd set-default-sink 1
+pacmd set-default-sink 2
+```
