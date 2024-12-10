@@ -596,3 +596,59 @@ For me, my headphones are sink 62. My headphones are sink 66. You can use either
 pactl set-default-sink 62
 pactl set-default-sink 66
 ```
+
+
+
+
+
+
+
+
+
+# Dealing with NVIDIA
+
+Helpful tips: https://forum.artixlinux.org/index.php/topic,7521.0.html
+
+Arch mirrors: https://archlinux.org/mirrorlist/?country=US
+
+Artix Mirrors: https://gitea.artixlinux.org/packages/artix-mirrorlist/raw/branch/master/mirrorlist
+
+Enable these repositories in `/etc/pacman.conf`:
+```
+[system]
+Include = /etc/pacman.d/mirrorlist
+
+[world]
+Include = /etc/pacman.d/mirrorlist
+
+[galaxy]
+Include = /etc/pacman.d/mirrorlist
+
+[asteroids]
+Include = /etc/pacman.d/mirrorlist
+
+[lib32]
+Include = /etc/pacman.d/mirrorlist
+
+[community]
+Include = /etc/pacman.d/mirrorlist-multilib
+
+[multilib]
+Include = /etc/pacman.d/mirrorlist-multilib
+```
+
+Ensure mirrorlist refers to artix:
+
+```
+[root@desktop ~]$ rm -f /var/lib/pacman/sync/
+asteroids.db  community.db  galaxy.db     lib32.db      multilib.db   system.db     world.db
+```
+
+as onyx-dragoon:
+```
+pacman -Syu
+pacman -R nvidia nvidia-settings nvidia-utils
+pacman -S nvidia-dkms nvidia-settings nvidia-utils
+```
+
+DKMS is more reliable for some reason. Try to avoid "gremlins", "extra", and "testing" repositories when dealing with NVIDIA.
