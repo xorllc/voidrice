@@ -517,6 +517,7 @@ Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA
 
 # Audio debugging, corsair carbide
 
+## Bad Approach
 First, we need pulseaudio:
 ```
 [onyx-dragoon@desktop ~]$ pacman -S pulseaudio-bluetooth
@@ -527,4 +528,71 @@ Then, toggle between headset and speakers:
 [onyx-dragoon@desktop ~]$ pacmd list-sinks
 pacmd set-default-sink 1
 pacmd set-default-sink 2
+```
+
+
+[onyx-dragoon@desktop ~]$ pacman -Rns pulseaudio pulseaudio-bluetooth
+checking dependencies...
+:: libpulse optionally requires pulse-native-provider: PulseAudio backend
+:: picom optionally requires rtkit: for realtime scheduling priority
+:: pipewire optionally requires rtkit: realtime privileges with rtkit module
+
+Packages (3) rtkit-0.13-3.1  pulseaudio-17.0-3  pulseaudio-bluetooth-17.0-3
+
+
+## Better approach - use the pulseaudio "plugin" for pipewire
+
+```
+pacman -Rns pulseaudio pulseaudio-bluetooth
+```
+
+```
+pacman -S pipewire-pulse
+```
+
+
+```
+[onyx-dragoon@desktop ~]$ pactl list sinks | grep -B1 -A9 -i state
+Sink #62
+        State: SUSPENDED
+        Name: alsa_output.usb-Actions_BW01_0123456789AB-01.analog-stereo
+        Description: BW01 Analog Stereo
+        Driver: PipeWire
+        Sample Specification: s24le 2ch 48000Hz
+        Channel Map: front-left,front-right
+        Owner Module: 4294967295
+        Mute: no
+        Volume: front-left: 52516 /  80% / -5.77 dB,   front-right: 52516 /  80% / -5.77 dB
+                balance 0.00
+--
+Sink #66
+        State: SUSPENDED
+        Name: alsa_output.pci-0000_00_1f.3.analog-stereo
+        Description: Built-in Audio Analog Stereo
+        Driver: PipeWire
+        Sample Specification: s32le 2ch 48000Hz
+        Channel Map: front-left,front-right
+        Owner Module: 4294967295
+        Mute: no
+        Volume: front-left: 51738 /  79% / -6.16 dB,   front-right: 51738 /  79% / -6.16 dB
+                balance 0.00
+--
+Sink #102
+        State: SUSPENDED
+        Name: alsa_output.pci-0000_01_00.1.hdmi-stereo
+        Description: GP107GL High Definition Audio Controller Digital Stereo (HDMI)
+        Driver: PipeWire
+        Sample Specification: s32le 2ch 48000Hz
+        Channel Map: front-left,front-right
+        Owner Module: 4294967295
+        Mute: no
+        Volume: front-left: 32112 /  49% / -18.59 dB,   front-right: 32112 /  49% / -18.59 dB
+                balance 0.00
+```
+
+For me, my headphones are sink 62. My headphones are sink 66. You can use either the ID or the name to switch:
+
+```
+pactl set-default-sink 62
+pactl set-default-sink 66
 ```
