@@ -237,3 +237,4 @@ VirtualBox VMs/
 VirtualBox on Artix (Arch-based Linux)_ Install - DEV Community.pdf
 steam.desktop
 .config/go
+.vboxclient*
