@@ -14,11 +14,21 @@ return require('packer').startup(function(use)
   }
 
   use({
-	  'rose-pine/neovim',
+	  'asilvam133/rose-pine.nvim',
 	  as = 'rose-pine',
 	  config = function()
 		  vim.cmd('colorscheme rose-pine')
 	  end
   })
+
+  use({
+	  'rebelot/kanagawa.nvim',
+	  as = 'kanagawa',
+	  config = function()
+		  vim.cmd('colorscheme kanagawa')
+	  end
+  })
+
+  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
 end)
