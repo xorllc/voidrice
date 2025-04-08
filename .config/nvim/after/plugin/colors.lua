@@ -1,3 +1,7 @@
+require("nvim-highlight-colors").setup {
+    enable_hex = true,
+    enable_short_hex = true,
+}
 -- require("rose-pine").setup({
 -- 	disable_italics = true,
 -- 	disable_background = true,
@@ -69,8 +73,13 @@ require('kanagawa').setup({
     },
     overrides = function(colors) -- add/modify highlights
     return {
-	    MatchParen = { fg = "#000000", bg = "#665c54" },
-	    Visual = { bg = "#363432" },
+        MatchParen = { fg = "#000000", bg = "#665c54" },
+        Visual = { bg = "#363432" },
+        LineNr = { bg = "#000000" },
+        Underlined = { fg = "#ffffff" },
+        IncSearch = { fg = "#000000", bg = "#ffffff", underline = false },
+        Search = { fg = "#000000", bg = "#ffffff" },
+        Selection = { bg = "#ffffff" },
     }
     end,
     theme = "dragon",              -- Load "wave" theme
