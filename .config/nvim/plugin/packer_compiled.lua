@@ -85,6 +85,11 @@ _G.packer_plugins = {
     path = "/home/dabham/.local/share/nvim/site/pack/packer/start/kanagawa",
     url = "https://github.com/rebelot/kanagawa.nvim"
   },
+  ["nvim-highlight-colors"] = {
+    loaded = true,
+    path = "/home/dabham/.local/share/nvim/site/pack/packer/start/nvim-highlight-colors",
+    url = "https://github.com/brenoprata10/nvim-highlight-colors"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/dabham/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
