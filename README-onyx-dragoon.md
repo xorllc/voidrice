@@ -652,3 +652,31 @@ pacman -S nvidia-dkms nvidia-settings nvidia-utils
 ```
 
 DKMS is more reliable for some reason. Try to avoid "gremlins", "extra", and "testing" repositories when dealing with NVIDIA.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# neovim
+
+1. `rm -rf .config/nvim/`
+2.
+```
+[onyx-dragoon@desktop ~cf/nvim]$ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+3. `~/.config/nvim/lua/theprimeagen/packer.lua`
+4. `:so`
+5. `:PackerSync`
