@@ -680,3 +680,25 @@ DKMS is more reliable for some reason. Try to avoid "gremlins", "extra", and "te
 3. `~/.config/nvim/lua/theprimeagen/packer.lua`
 4. `:so`
 5. `:PackerSync`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   28  sudo pacman -S npm nodejs
+   29  sudo pacman -Syu
+   30  repams
+   31  remaps
+   32  sudo pacman -S npm nodejs
+
