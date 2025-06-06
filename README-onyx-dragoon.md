@@ -712,3 +712,18 @@ DKMS is more reliable for some reason. Try to avoid "gremlins", "extra", and "te
 helpful in getting the LSP set up.
 https://www.youtube.com/watch?v=w7i4amO_zaE&t=1091s
 https://github.com/LunarVim/LunarVim/issues/2736#issuecomment-1171080243
+
+
+
+
+
+
+
+
+
+
+
+
+# Vagrant
+
+In a Windows environment, from the `.vagrant-in-vbox` folder, copy `Vagrantfile`, `larbs.sh`, and `progs.csv` to the same folder. Then, run `vagrant up`. Now this Linux setup is self-hosted!
