@@ -3,27 +3,16 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider "virtualbox" do |vb|
     vb.gui = true
-
-    # Allocate memory and CPUs
-    vb.memory = "16384"  # 16GB RAM
-    vb.cpus = "4"       # 2 CPUs
-
-    vb.customize ["modifyvm", :id, "--vram", "128"]  # Increased VRAM
-    vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxsvga"]  # Changed from vmsvga
-
+    vb.memory = "3584"
+    vb.cpus = "2"
+    vb.customize ["modifyvm", :id, "--vram", "128"]
     vb.customize ["modifyvm", :id, "--audio", "default", "--audiocontroller", "hda"]
-    # For Linux hosts:
-    # vb.customize ["modifyvm", :id, "--audio", "pulse", "--audiocontroller", "hda"]
-    # For macOS hosts:
-    # vb.customize ["modifyvm", :id, "--audio", "coreaudio", "--audiocontroller", "hda"]
-
     vb.customize ["modifyvm", :id, "--audio-out", "on"]
+    vb.customize ["modifyvm", :id, "--cpuexecutioncap", "80"]
 
     # Enable bidirectional clipboard and drag-and-drop
     vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
     vb.customize ["modifyvm", :id, "--draganddrop", "bidirectional"]
-
-	vb.customize ["modifyvm", :id, "--cpuexecutioncap", "90"]
   end
 
   # Configure shared folders
@@ -35,21 +24,8 @@ Vagrant.configure("2") do |config|
 
     # NEW: Properly install VirtualBox Guest Utils with X11 support
     sudo pacman -Rns --noconfirm virtualbox-guest-utils-nox || true
-    sudo pacman -S --noconfirm virtualbox-guest-utils virtualbox-guest-modules-arch
+    sudo pacman -S --noconfirm virtualbox-guest-utils
     sudo systemctl enable vboxservice --now
-
-    # NEW: Fix audio timing (disable dynamic ticks)
-    sudo bash -c 'echo "options snd-intel-hda index=0" > /etc/modprobe.d/audio.conf'
-    sudo bash -c 'echo "GRUB_CMDLINE_LINUX_DEFAULT=\"nohz=off\"" >> /etc/default/grub'
-    sudo grub-mkconfig -o /boot/grub/grub.cfg
-
-    # NEW: Install PulseAudio and ALSA (better audio sync)
-    sudo pacman -S --noconfirm pulseaudio pulseaudio-alsa alsa-utils
-    sudo alsactl init
-
-    # NEW: Install Firefox (better YouTube playback in VMs than Chromium)
-    sudo pacman -S --noconfirm firefox
-
   SHELL
 
   # Copy larbs.sh to /tmp on the VM and execute it.
