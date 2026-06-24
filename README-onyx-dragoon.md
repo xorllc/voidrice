@@ -727,3 +727,62 @@ https://github.com/LunarVim/LunarVim/issues/2736#issuecomment-1171080243
 # Vagrant
 
 In a Windows environment, from the `.vagrant-in-vbox` folder, copy `Vagrantfile`, `larbs.sh`, and `progs.csv` to the same folder. Then, run `vagrant up`. Now this Linux setup is self-hosted!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Font stuff
+
+Well, the plot thickens! Fontconfig definitely sees Inconsolata-g, so the name is correct.
+
+The issue here is likely spacing and format matching. Fontconfig can sometimes reject a font for a generic alias like monospace or mono if it thinks the font doesn't explicitly fit the strict monospace criteria (spacing=100) or if a system-wide rule is overriding your user preference.
+
+Let's bypass the polite request system and explicitly force Fontconfig to use it.
+Step 1: Update your fonts.conf with a binding
+
+Instead of a simple <prefer> block, add a explicit <match> block right before your closing </fontconfig> tag. This intercepts requests for mono and monospace and forces Inconsolata-g to the top of the line.
+
+Open your ~/.config/fontconfig/fonts.conf and add this:
+XML
+
+<match target="pattern">
+        <test qual="any" name="family">
+                <string>monospace</string>
+        </test>
+        <edit name="family" mode="prepend" binding="strong">
+                <string>Inconsolata-g</string>
+        </edit>
+</match>
+
+<match target="pattern">
+        <test qual="any" name="family">
+                <string>mono</string>
+        </test>
+        <edit name="family" mode="prepend" binding="strong">
+                <string>Inconsolata-g</string>
+        </edit>
+</match>
+
+Using binding="strong" tells Fontconfig to ignore system defaults that might be overriding your alias blocks.
+Step 2: Clear cache and test
+
+Run the cache rebuild and test match again:
+Bash
+
+fc-cache -fv
+fc-match mono
+fc-match monospace
+
+If it successfully returns Inconsolata-g, fire up a new st instance and you should be good to go!
