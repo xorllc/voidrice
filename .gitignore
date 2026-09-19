@@ -239,3 +239,4 @@ steam.desktop
 .config/go
 .vboxclient*
 plugin/packer_compiled.lua 
+.config/librewolf
